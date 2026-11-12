@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mrs Aimiee 🌷</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0, #fff0f5);
+    font-family: Georgia, serif;
+    color: #880e4f;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.92);
+    padding: 38px 28px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(136,14,79,0.12);
+    max-width: 460px;
+    width: 100%;
+    z-index: 10;
+    animation: appear 0.8s ease;
+}
+
+.hidden { display: none !important; }
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.small {
+    font-size: 0.9rem;
+    color: #ad6685;
+}
+
+button {
+    padding: 13px 21px;
+    border: none;
+    border-radius: 50px;
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(136,14,79,0.15);
+}
+
+.primary {
+    background: #ec407a;
+    color: white;
+}
+
+.secondary {
+    background: #fce4ec;
+    color: #880e4f;
+}
+
+.flower {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ff80ab;
+    pointer-events: none;
+    animation: float 6s linear forwards;
+    z-index: 1;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.9;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:480px) {
+    .container { padding: 32px 20px; }
+    h1 { font-size: 1.7rem; }
+    p { font-size: 1rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SCREEN 1: OPENING -->
+
+<div id="intro" class="container">
+
+    <div class="flower">🌷</div>
+
+    <p class="small">A LITTLE SOMETHING FOR YOU</p>
+
+    <h1>For Mrs Aimiee 💌</h1>
+
+    <p>
+        There is something I wanted to tell you...
+        <br><br>
+        A little message from my heart.
+    </p>
+
+    <button class="primary" onclick="openMessage()">
+        Open My Message 💗
+    </button>
+
+    <p class="small" style="margin-top:22px;">
+        Made with sincerity & friendship ♡
+    </p>
+
+</div>
+
+
+<!-- SCREEN 2: APOLOGY -->
+
+<div id="page1" class="container hidden">
+
+    <div class="flower">🥺</div>
+
+    <p class="small">A MESSAGE FROM THE HEART</p>
+
+    <h1>I'm Sorry, Mrs Aimiee</h1>
+
+    <p>
+        Hey Mrs Aimiee... 🥺
+        <br><br>
+
+        I genuinely want to apologise for last night.
+        <br><br>
+
+        I know I told you that I would talk to you,
+        but unfortunately, I couldn't keep my promise.
+        I had quite a lot of workload, and I was
+        really tired, so I ended up falling asleep.
+        <br><br>
+
+        I know you messaged me, and I'm really sorry
+        that I didn't reply.
+        <br><br>
+
+        I should have at least informed you,
+        but I didn't, and I understand that
+        leaving you waiting wasn't right.
+        <br><br>
+
+        Please don't think that I was intentionally
+        ignoring you or avoiding our conversation.
+        That was never my intention.
+        <br><br>
+
+        I understand that I should have managed
+        things better, and I genuinely regret
+        not keeping my word.
+        <br><br>
+
+        I'm really sorry, Mrs Aimiee.
+        Your friendship matters to me,
+        and I never want you to feel ignored.
+        <br><br>
+
+        <b>Once again, I'm genuinely sorry. 🌷❤️</b>
+    </p>
+
+    <p class="small">
+        I hope you understand. 💗
+    </p>
+
+    <button class="primary" onclick="showPage2('forgive')">
+        I forgive you ❤️
+    </button>
+
+    <button class="secondary" onclick="showPage2('time')">
+        I need some time 🌸
+    </button>
+
+</div>
+
+
+<!-- SCREEN 3: HER RESPONSE -->
+
+<div id="page2" class="container hidden">
+
+    <div class="flower">💌</div>
+
+    <h1 id="responseTitle">Thank You!</h1>
+
+    <p id="responseText"></p>
+
+    <button class="primary" onclick="showPage3()">
+        One Last Thing... 🌷
+    </button>
+
+</div>
+
+
+<!-- SCREEN 4: FRIENDSHIP -->
+
+<div id="page3" class="container hidden">
+
+    <div class="flower">🫶🏻</div>
+
+    <h1>For Our Friendship</h1>
+
+    <p>
+        Mrs Aimiee,
+        <br><br>
+
+        I just want you to know that
+        I'm grateful to have a friend like you.
+        <br><br>
+
+        I know that sometimes I might make mistakes,
+        but I'll always try to learn from them.
+        <br><br>
+
+        I don't expect everything to become
+        normal instantly. Take your time.
+        I'll respect your feelings.
+        <br><br>
+
+        Thank you for reading my little message.
+        I genuinely hope we can smile and laugh
+        together again. 🌷
+    </p>
+
+    <h3>With Respect & Friendship ❤️</h3>
+
+    <p class="small">
+        This message comes straight from the heart.
+    </p>
+
+</div>
+
+
+<script>
+
+function openMessage() {
+    document.getElementById("intro").classList.add("hidden");
+    document.getElementById("page1").classList.remove("hidden");
+}
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    const decorations = ["♡", "♥", "🌸", "✿"];
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        decorations[Math.floor(Math.random() * decorations.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 650);
+
+
+function showPage2(choice) {
+
+    document.getElementById("page1").classList.add("hidden");
+
+    document.getElementById("page2").classList.remove("hidden");
+
+    if (choice === "forgive") {
+
+        document.getElementById("responseTitle").innerHTML =
+            "Thank You, Mrs Aimiee! ❤️";
+
+        document.getElementById("responseText").innerHTML =
+            "I truly appreciate your forgiveness. " +
+            "I'll try my best to be more thoughtful " +
+            "and not leave you waiting again. 🌷";
+
+    } else {
+
+        document.getElementById("responseTitle").innerHTML =
+            "I Understand 🌸";
+
+        document.getElementById("responseText").innerHTML =
+            "It's completely okay if you need some time. " +
+            "I respect your feelings and won't rush you. " +
+            "I just wanted you to know that I'm genuinely sorry. 💗";
+
+    }
+}
+
+
+function showPage3() {
+
+    document.getElementById("page2").classList.add("hidden");
+
+    document.getElementById("page3").classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>
